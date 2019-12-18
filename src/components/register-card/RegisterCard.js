@@ -1,12 +1,12 @@
 import React from 'react';
-import './_login-card.scss';
-import { Card, Input, Button, Form, Icon, Checkbox } from 'antd';
+import './_register-card.scss';
+import { Card, Input, Button, Form, Icon } from 'antd';
 import { Link } from 'react-router-dom';
-const Login = props => {
+const Register = props => {
   const { getFieldDecorator } = props.form;
   return (
-    <Form className='login-form'>
-      <h1 className='login-title'>LOGIN</h1>
+    <Form className='register-form'>
+      <h1 className='register-title'>REGISTER</h1>
       <Form.Item>
         {getFieldDecorator('username', {
           rules: [{ required: true, message: 'Please input your username!' }],
@@ -24,32 +24,25 @@ const Login = props => {
         )}
       </Form.Item>
       <Form.Item>
-        {getFieldDecorator('remember', {
-          valuePropName: 'checked',
-          initialValue: true,
-        })(<Checkbox>Remember me</Checkbox>)}
-        <Link className='login-form-forgot' to='/'>
-          Forgot password
-        </Link>
-        <Button type='primary' htmlType='submit' className='login-form-button'>
-          Log in
+        <Button type='primary' htmlType='submit' className='register-form-button'>
+          Register
         </Button>
         Or
-        <Link to="/register"> register now!</Link>
+        <Link to='/register'> Already have account</Link>
       </Form.Item>
     </Form>
   );
 };
-const LoginForm = Form.create({ name: 'normal_login' })(Login);
+const RegisterForm = Form.create({ name: 'normal_register' })(Register);
 
-const LoginCard = props => {
+const RegisterCard = props => {
   return (
-    <div class='login-card'>
+    <div class='register-card'>
       <Card>
-        <LoginForm />
+        <RegisterForm />
       </Card>
     </div>
   );
 };
 
-export default LoginCard;
+export default RegisterCard;

@@ -1,0 +1,19 @@
+.register-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.register-form {
+  width: 300px;
+  height: 300px;
+  .register-title {
+    text-align: center;
+  }
+  .register-form-forgot {
+    float: right;
+  }
+  .register-form-button {
+    width: 100%;
+  }
+}
