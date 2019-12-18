@@ -44,7 +44,7 @@ const LoginForm = Form.create({ name: 'normal_login' })(Login);
 
 const LoginCard = props => {
   return (
-    <div class='login-card'>
+    <div className='login-card'>
       <Card>
         <LoginForm />
       </Card>

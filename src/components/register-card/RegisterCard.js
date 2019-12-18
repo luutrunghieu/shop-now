@@ -24,6 +24,17 @@ const Register = props => {
         )}
       </Form.Item>
       <Form.Item>
+        {getFieldDecorator('confirmPassword', {
+          rules: [{ required: true, message: 'Please input your Password!' }],
+        })(
+          <Input
+            prefix={<Icon type='lock' style={{ color: 'rgba(0,0,0,.25)' }} />}
+            type='password'
+            placeholder='Confirm Password'
+          />
+        )}
+      </Form.Item>
+      <Form.Item>
         <Button type='primary' htmlType='submit' className='register-form-button'>
           Register
         </Button>
@@ -37,7 +48,7 @@ const RegisterForm = Form.create({ name: 'normal_register' })(Register);
 
 const RegisterCard = props => {
   return (
-    <div class='register-card'>
+    <div className='register-card'>
       <Card>
         <RegisterForm />
       </Card>
